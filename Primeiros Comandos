@@ -1,0 +1,30 @@
+--Criando Banco de Dados
+Create database Empresa;
+
+--Usando Banco de Dados
+Use database Empresa;
+
+--Criando Tabelas
+--Tabela Depósito
+Create table deposito (
+	deposito_id int(11) not null auto_increment,
+	deposito_nome varchar(255) not null,
+Primary key (deposito_id)
+) Engine=InnoDB Default Charset=utf-8 auto_increment=1;
+
+--Tabela Produtos
+Create table produtos (
+	produtos_id int(11) not null auto_increment,
+	produtos_id_deposito int(11) not null,
+	produtos_nome varchar(255) not null,
+Primary key (produtos_id)
+) Engine=InnoDB Default Charset=utf-8 auto_increment;
+
+--Inserindo departamentos no depósito
+Insert into deposito (informatica, telefonia, Rubik, Camisas, Copos)
+	values
+	("Monitor Samsung 23pol", "Celular LG K52 Octacore", "3x3x3 Moyu", "Bart Simpson Black", "Stanley Black"), 
+	("Monitor Samsung 23pol", "Celular LG K52 Octacore", "3x3x3 Moyu", "Bart Simpson Black", "Stanley Black"),
+	("TV AOC 32pol", "Celular Motorola G5 Octacore", "3x3x3 Dansheng", "Kiss Black", "Stanley Wine"),
+	("TV Samsung 32pol", "Celular LG K52 Octacore", "4x4x4 Moyu", "Venom Black", "Stanley Red Dark"),
+	("TV SONY 23pol", "Celular LG K52 Octacore", "5x5x5 Moyu", "Iron Man Mark II", "Stanley Blue Dark");
